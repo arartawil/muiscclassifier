@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ciud64o*8!3_hjrex*3cp(zmm3i9+v@68=j6zo1d9(4$ki^+t('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://muiscclassifier.herokuapp.com/','127.0.0.1']
 
 
 # Application definition
