@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="{%static 'css/bootstrap.css'%}"
+    />
+<head>
+    <meta charset="UTF-8">
+    <title>Music Classification </title>
+</head>
+<body>
+<div class="container mt-5">
+  <h1 class="text-center">Check Genres Music</h1>
+    <br/>
+  <div class="col-sm-12   border p-4">
+  <form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label><strong>Upload Wav File</strong></label>
+      <div class="custom-file">
+           {% csrf_token %}
+         <input type="file"  class="custom-file-input form-control" id="customFile" multiple  name="myfile">
+
+        <label class="custom-file-label" for="customFile">Choose file</label>
+      </div>
+    </div>
+      <br/>
+
+    <select class="form-select" name="lang" id="lang" aria-label="Default select example">
+  <option selected> select language</option>
+  <option value="1">English</option>
+  <option value="2">Arabic</option>
+</select>
+      <br />
+    <div class="form-group">
+          <button type="submit"  value="upload" id="upload" class="btn btn-block btn-dark">
+               <i class="fa fa-fw fa-upload"></i>
+              Check</button>
+    </div>
+  </form>
+
+{% if error == 1 %}
+      <div class="alert alert-danger" role="alert">
+   this not wav file
+</div>
+      {% endif %}
+
+<br/>
+
+{% if uploaded_file_url %}
+    <p style="font-size:16pt">Music Type <i style="font-size:16pt, color:red">{{ uploaded_file_url }} </i></p>
+  {% endif %}
+</div>
+</div>
+
+
+</body>
+</html>
+
+
