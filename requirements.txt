@@ -2,7 +2,7 @@ absl-py
 aiohttp
 appdirs==1.4.4
 asgiref
-astor @
+astor
 astunparse
 async-timeout==3.0.1
 attrs
@@ -82,4 +82,4 @@ win-inet-pton
 wincertstore==0.2
 wrapt
 yarl
-zipp 
+zipp
